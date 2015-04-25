@@ -40,7 +40,7 @@ module.exports = function gulpMinifyCSS(options) {
               return src;
             }
 
-            return path.relative(file.base, src === '$stdin' ? file.path : src);
+            return src === '$stdin' ? file.relative : src;
           });
 
           applySourceMap(file, map);
